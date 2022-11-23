@@ -1,8 +1,12 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, unused_import
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tour_application/const/app_colors.dart';
+import 'package:tour_application/const/app_string.dart';
+import 'package:tour_application/route/route.dart';
 import 'package:tour_application/screen/splash_screen.dart';
+import 'package:get/get.dart';
 
 void main(List<String> args) {
   runApp(MyApp());
@@ -18,14 +22,17 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
-        return MaterialApp(
+        return GetMaterialApp(
           debugShowCheckedModeBanner: false,
-          title: "Gora-Gori",
+          title: AppString.AppName,
           theme: ThemeData(
             primarySwatch: Colors.blue,
             textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme.apply()),
+            scaffoldBackgroundColor: AppColors.scaffoldColor,
           ),
-          home: SplashScree(),
+          initialRoute: splash,
+          getPages: getPages,
+          home: SplashScreen(),
         );
       },
     );
