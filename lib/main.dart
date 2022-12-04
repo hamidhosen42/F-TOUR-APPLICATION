@@ -1,4 +1,5 @@
 // ignore_for_file: prefer_const_constructors, unused_import
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -8,7 +9,10 @@ import 'package:tour_application/route/route.dart';
 import 'package:tour_application/screen/splash_screen.dart';
 import 'package:get/get.dart';
 
-void main(List<String> args) {
+void main(List<String> args) async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  
   runApp(MyApp());
 }
 
