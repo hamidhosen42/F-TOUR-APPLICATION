@@ -7,10 +7,10 @@ import 'package:tour_application/const/app_colors.dart';
 
 class VioletButton extends StatelessWidget {
 
-
   late String title;
-  VioletButton(this.title);
+  final Function onAction;
 
+  VioletButton(this.title, this.onAction);
 
   RxBool _value = false.obs;
 
@@ -20,6 +20,7 @@ class VioletButton extends StatelessWidget {
       InkWell(
         onTap: () {
           _value.value = true;
+          onAction();
         },
         child: Container(
             height: 60 .h,

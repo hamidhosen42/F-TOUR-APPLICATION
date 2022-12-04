@@ -54,7 +54,7 @@ class SignUp extends StatelessWidget {
               SizedBox(
                 height: 40.h,
               ),
-              VioletButton("Create Account"),
+              VioletButton("Create Account",()=>Get.toNamed(userForm)),
               SizedBox(
                 height: 20.h,
               ),
