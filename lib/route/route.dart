@@ -5,9 +5,12 @@ import 'package:tour_application/screen/auth/sign_up.dart';
 import 'package:tour_application/screen/onboarding_screen.dart';
 import 'package:tour_application/screen/splash_screen.dart';
 
+import '../screen/auth/sign_in.dart';
+
 const String splash = "/splash_screen";
 const String onboarding = "/onboarding_screen";
 const String signUp= "/sign-up-screen";
+const String signIn= "/sign-in-screen";
 
 // control our page  route flow
 
@@ -15,4 +18,5 @@ List<GetPage> getPages = [
   GetPage(name: splash, page: () => SplashScreen()),
   GetPage(name: onboarding, page: ()=>OnboardingScreen()),
   GetPage(name: signUp, page: ()=>SignUp()),
+  GetPage(name: signIn, page: ()=>SignIn()),
 ];

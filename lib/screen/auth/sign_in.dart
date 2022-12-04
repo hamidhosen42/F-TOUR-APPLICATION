@@ -5,13 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:tour_application/const/app_colors.dart';
-import 'package:tour_application/screen/auth/sign_in.dart';
+import 'package:tour_application/route/route.dart';
 import 'package:tour_application/styles/style.dart';
 
-import '../../route/route.dart';
 import '../../widgets/violetButton.dart';
 
-class SignUp extends StatelessWidget {
+class SignIn extends StatelessWidget {
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
 
@@ -25,18 +24,18 @@ class SignUp extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Create\nYour Account",
+                "Login\nTo Your Account",
                 style: AppStyle().signUpTextStyle,
               ),
+              // SizedBox(
+              //   height: 12.h,
+              // ),
+              // Text(
+              //   "Create your account and start your \njourney",
+              //   style: TextStyle(fontSize: 22.sp, fontWeight: FontWeight.w300),
+              // ),
               SizedBox(
-                height: 12.h,
-              ),
-              Text(
-                "Create your account and start your \njourney",
-                style: TextStyle(fontSize: 22.sp, fontWeight: FontWeight.w300),
-              ),
-              SizedBox(
-                height: 50.h,
+                height: 70.h,
               ),
               TextFormField(
                 controller: _emailController,
@@ -54,7 +53,7 @@ class SignUp extends StatelessWidget {
               SizedBox(
                 height: 40.h,
               ),
-              VioletButton("Create Account"),
+              VioletButton("Login"),
               SizedBox(
                 height: 20.h,
               ),
@@ -87,20 +86,20 @@ class SignUp extends StatelessWidget {
               Center(
                 child: RichText(
                   text: TextSpan(
-                      text: "Already an user?",
+                      text: "Don’t have registered yet?",
                       style: TextStyle(
                           fontSize: 20.sp,
                           color: Colors.black,
                           fontWeight: FontWeight.w300),
                       children: [
                         TextSpan(
-                            text: " Log In",
+                            text: " Sign Up",
                             style: TextStyle(
                                 fontSize: 20.sp,
                                 color: AppColors.violetColor,
                                 fontWeight: FontWeight.w600),
                             recognizer: TapGestureRecognizer()..onTap = () {
-                              Get.toNamed(signIn);
+                              Get.toNamed(signUp);
                             })
                       ]),
                 ),
