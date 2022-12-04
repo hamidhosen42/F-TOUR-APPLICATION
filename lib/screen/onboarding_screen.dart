@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, must_be_immutable, prefer_final_fields, unused_field, prefer_const_literals_to_create_immutables, unnecessary_string_interpolations
+// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, must_be_immutable, prefer_final_fields, unused_field, prefer_const_literals_to_create_immutables, unnecessary_string_interpolations, unrelated_type_equality_checks
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -94,7 +94,7 @@ class OnboardingScreen extends StatelessWidget {
                             ),
                             InkWell(
                               onTap: () {
-                                if (_currentIndex < 3) {
+                                if (_currentIndex==_title.length-1) {
                                   Get.toNamed(signUp);
                                 } else {
                                   _currentIndex = _currentIndex + 1;

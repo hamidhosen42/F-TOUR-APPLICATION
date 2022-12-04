@@ -1,63 +1,101 @@
-// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, sort_child_properties_last
+// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, sort_child_properties_last, prefer_const_literals_to_create_immutables, unused_field, prefer_final_fields, must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tour_application/const/app_colors.dart';
+import 'package:tour_application/styles/style.dart';
+
+import '../../widgets/violetButton.dart';
 
 class SignUp extends StatelessWidget {
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Padding(
-          padding: EdgeInsets.all(15),
-          child: ListView(
+      body: Padding(
+        padding: EdgeInsets.only(left: 25.w, right: 25.w, top: 80.h),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                alignment: Alignment.center,
-                padding: EdgeInsets.symmetric(vertical: 80),
-                child: Text(
-                  "Phitron",
-                  style: TextStyle(
-                      fontSize: 50,
-                      fontWeight: FontWeight.w900,
-                      fontFamily: "Cursive",
-                      color: Colors.blueAccent),
-                ),
+              Text(
+                "Create\nYour Account",
+                style: AppStyle().signUpTextStyle,
               ),
-              Container(
-                padding: EdgeInsets.symmetric(vertical: 7, horizontal: 5),
-                child: TextField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: "Username",
-                    labelStyle: TextStyle(fontSize: 20),
-                  ),
-                ),
+              SizedBox(
+                height: 12.h,
               ),
-              Container(
-                padding: EdgeInsets.symmetric(vertical: 20, horizontal: 5),
-                child: TextField(
+              Text(
+                "Create your account and start your \njourney",
+                style: TextStyle(fontSize: 22.sp, fontWeight: FontWeight.w300),
+              ),
+              SizedBox(
+                height: 50.h,
+              ),
+              TextFormField(
+                controller: _emailController,
+                keyboardType: TextInputType.emailAddress,
+                decoration: AppStyle().textFieldDecoration("Email"),
+              ),
+              SizedBox(
+                height: 30.h,
+              ),
+              TextFormField(
+                  controller: _passwordController,
                   obscureText: true,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: "Password",
-                    labelStyle: TextStyle(fontSize: 20),
-                  ),
+                  keyboardType: TextInputType.text,
+                  decoration: AppStyle().textFieldDecoration("Password")),
+              SizedBox(
+                height: 40.h,
+              ),
+              VioletButton("Create Account"),
+              SizedBox(
+                height: 20.h,
+              ),
+              Center(
+                child: Text(
+                  "--OR--",
+                  style:
+                      TextStyle(fontSize: 22.sp, fontWeight: FontWeight.w300),
                 ),
               ),
-              Container(
-                padding: EdgeInsets.symmetric(vertical: 10, horizontal: 5),
-                child: ElevatedButton(
-                  onPressed: () {},
-                  child: Text(
-                    "Log In",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                  style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all(Colors.blueAccent),
-                      padding: MaterialStateProperty.all(
-                          EdgeInsets.symmetric(vertical: 15, horizontal: 20))),
+              SizedBox(
+                height: 20.h,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  IconButton(
+                      onPressed: () {},
+                      icon: Image.asset(
+                        "assets/icons/google.png",
+                      )),
+                  IconButton(
+                      onPressed: () {},
+                      icon: Image.asset("assets/icons/facebook.png")),
+                ],
+              ),
+              SizedBox(
+                height: 30.h,
+              ),
+              Center(
+                child: RichText(
+                  text: TextSpan(
+                      text: "Already an user?",
+                      style: TextStyle(
+                          fontSize: 20.sp,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w300),
+                      children: [
+                        TextSpan(
+                            text: " Log In",
+                            style: TextStyle(
+                                fontSize: 20.sp,
+                                color: AppColors.violetColor,
+                                fontWeight: FontWeight.w600))
+                      ]),
                 ),
               ),
             ],
