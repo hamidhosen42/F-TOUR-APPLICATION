@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:tour_application/const/app_string.dart';
 import 'package:tour_application/route/route.dart';
+import 'package:tour_application/styles/style.dart';
 
 class SplashScreen extends StatelessWidget {
 
@@ -11,7 +12,7 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
 
     Future.delayed(Duration(seconds: 3),()=>Get.toNamed(onboarding));
-    
+
     return SafeArea(
       child: Scaffold(
         body: Center(
@@ -22,7 +23,7 @@ class SplashScreen extends StatelessWidget {
               SizedBox(
                 height: 20.h,
               ),
-              Text(AppString.AppName,style: TextStyle(fontSize: 30),),
+              Text(AppString.AppName,style:AppStyle().myTextStyle),
             ],
           ),
         ),
