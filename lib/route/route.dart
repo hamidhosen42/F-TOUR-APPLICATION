@@ -15,7 +15,7 @@ const String onboarding = "/onboarding_screen";
 const String signUp = "/sign-up-screen";
 const String signIn = "/sign-in-screen";
 const String userForm = "/user-form-screen";
-const String privacy = "/privacy-policy-screen";
+const String privacyPolicy = "/privacy-policy-screen";
 const String bottomNavController = '/bottom-nav-controller-screen';
 
 // control our page  route flow
@@ -26,7 +26,7 @@ List<GetPage> getPages = [
   GetPage(name: signUp, page: () => SignUp()),
   GetPage(name: signIn, page: () => SignIn()),
   GetPage(name: userForm, page: () => UserForm()),
-  GetPage(name: privacy, page: () => PrivacyPolicy()),
+  GetPage(name: privacyPolicy, page: () => PrivacyPolicy()),
   GetPage(
     name: bottomNavController,
     page: () => BottomNavController(),

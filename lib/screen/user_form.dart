@@ -1,4 +1,4 @@
-// ignore_for_file: use_key_in_widget_constructors, unused_field, must_be_immutable, prefer_final_fields, prefer_const_constructors, unused_element, unused_local_variable, curly_braces_in_flow_control_structures, prefer_const_literals_to_create_immutables, avoid_print
+// ignore_for_file: use_key_in_widget_constructors, unused_field, must_be_immutable, prefer_final_fields, prefer_const_constructors, unused_element, unused_local_variable, curly_braces_in_flow_control_structures, prefer_const_literals_to_create_immutables, avoid_print, unrelated_type_equality_checks
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:toggle_switch/toggle_switch.dart';
 import 'package:tour_application/route/route.dart';
 
+import '../back_end/form.dart';
 import '../styles/style.dart';
 import '../widgets/violetButton.dart';
 
@@ -13,21 +14,23 @@ class UserForm extends StatelessWidget {
   TextEditingController _nameController = TextEditingController();
   TextEditingController _phoneController = TextEditingController();
   TextEditingController _addressController = TextEditingController();
-
   Rx<TextEditingController> _dobController = TextEditingController().obs;
-
+  String? dob;
+  String gender = "Male";
   Rx<DateTime> selectedDate = DateTime.now().obs;
 
-  Future<void> _selectDate(BuildContext context) async {
-    final DateTime? picked = await showDatePicker(
-        context: context,
-        initialDate: selectedDate.value,
-        firstDate: DateTime(2000),
-        lastDate: DateTime(2050));
+  _selectDate(BuildContext context) async {
+    final selected = await showDatePicker(
+      context: context,
+      initialDate: selectedDate.value,
+      firstDate: DateTime(2000),
+      lastDate: DateTime(2025),
+    );
 
-    if (picked != null && picked != selectedDate)
-      _dobController.value.text =
-          "${picked.day} - ${picked.month} - ${picked.year}";
+    if (selected != null && selected != selectedDate) {
+      dob = "${selected.day} - ${selected.month} - ${selected.year}";
+      _dobController.value.text = dob!;
+    }
   }
 
   @override
@@ -79,7 +82,7 @@ class UserForm extends StatelessWidget {
                 () => TextFormField(
                   controller: _dobController.value,
                   readOnly: true,
-                  keyboardType: TextInputType.text,
+                  // keyboardType: TextInputType.text,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     focusedBorder: OutlineInputBorder(
@@ -108,13 +111,25 @@ class UserForm extends StatelessWidget {
                 totalSwitches: 2,
                 labels: ['Male', 'Female'],
                 onToggle: (index) {
+                  if (index == 0) {
+                    gender = "Male";
+                  } else {
+                    gender = "Female";
+                  }
                   print('switched to: $index');
                 },
               ),
               SizedBox(
                 height: 50.h,
               ),
-              VioletButton("Submit", () =>Get.toNamed(privacy)),
+              VioletButton(
+                  "Submit",
+                  () => UsersInfo().sendFormDataToDB(
+                      _nameController.text,
+                      int.parse(_phoneController.text),
+                      _addressController.text,
+                      dob!,
+                      gender)),
             ],
           ),
         ),
