@@ -1,4 +1,4 @@
-// ignore_for_file: unused_field, must_be_immutable, prefer_typing_uninitialized_variables, use_key_in_widget_constructors
+// ignore_for_file: unused_field, must_be_immutable, prefer_typing_uninitialized_variables, use_key_in_widget_constructors, prefer_const_constructors
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
+import 'details_screen.dart';
 import 'pages/nav_home.dart';
 
 class SeeAll extends StatefulWidget {

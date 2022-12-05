@@ -9,6 +9,7 @@ import 'package:tour_application/screen/user_form.dart';
 
 import '../screen/auth/sign_in.dart';
 import '../screen/bottom_nav_controller/details_screen.dart';
+import '../screen/bottom_nav_controller/pages/nav_add_last_step.dart';
 import '../screen/bottom_nav_controller/sell_all.dart';
 import '../screen/drawer_pages/faq.dart';
 import '../screen/drawer_pages/how_to_use.dart';
@@ -32,6 +33,7 @@ const String settingsScreen = '/settings-screen';
 const String profileScreen = '/profile-screen';
 const String seeAllScreen = '/seeAll-screen';
 const String detailsScreen = '/details-screen';
+const String navAddLastStep = '/navAddLastStep-screen';
 
 // control our page  route flow
 
@@ -78,6 +80,13 @@ List<GetPage> getPages = [
     page: () {
       DetailsSCreen _detailsSCreen = Get.arguments;
       return _detailsSCreen;
+    },
+  ),
+  GetPage(
+    name: navAddLastStep,
+    page: () {
+      NavAddLastStep _addLastStep = Get.arguments;
+      return _addLastStep;
     },
   ),
 ];

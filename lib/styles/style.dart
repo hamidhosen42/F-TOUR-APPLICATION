@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -23,6 +23,21 @@ class AppStyle {
           borderSide: BorderSide(color: Colors.black, width: 1.0),
         ),
         labelText: hint,
-        labelStyle: TextStyle(fontSize: 20,color: Colors.grey),
+        labelStyle: TextStyle(fontSize: 20, color: Colors.grey),
+      );
+  progressDialog(context) => showDialog(
+        context: context,
+        builder: (_) => Dialog(
+          child: Container(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                CircularProgressIndicator(),
+                Text("Processing"),
+              ],
+            ),
+          ),
+        ),
       );
 }

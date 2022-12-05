@@ -10,6 +10,7 @@ import 'package:get/get.dart';
 
 import '../../../route/route.dart';
 import '../../../widgets/nav_home_categories.dart';
+import '../sell_all.dart';
 
 class NavHome extends StatefulWidget {
   @override

@@ -5,6 +5,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/state_manager.dart';
 import 'package:tour_application/const/app_string.dart';
 
+import 'pages/nav_add.dart';
+import 'pages/nav_favourite.dart';
 import 'pages/nav_home.dart';
 
 class BottomNavController extends StatelessWidget {
@@ -13,8 +15,8 @@ class BottomNavController extends StatelessWidget {
 
   final _pages = [
    NavHome(),
-  //  NavAdd(),
-  //  NavFavourite(),
+   NavAdd(),
+   NavFavourite(),
   ];
 
   @override
