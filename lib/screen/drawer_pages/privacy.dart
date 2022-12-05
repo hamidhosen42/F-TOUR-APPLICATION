@@ -11,9 +11,13 @@ class Privacy extends StatelessWidget {
 
   showPrivacyPolicy(data) {
     return SfPdfViewer.network(
-      data['url'],
+      'https://firebasestorage.googleapis.com/v0/b/tour-application-57625.appspot.com/o/privacy%20policy%2Fprivacy-policy.pdf?alt=media&token=047c5c12-206f-47eb-817b-8809286b204f',
       onDocumentLoaded: (PdfDocumentLoadedDetails details) {
         _loaded.value = true;
+
+        // data['url'],
+        // onDocumentLoaded: (PdfDocumentLoadedDetails details) {
+        //   _loaded.value = true;
       },
     );
   }
@@ -24,7 +28,8 @@ class Privacy extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        title: const Text("Privacy"),
+        title: const Text("Privacy",style: TextStyle(color: Colors.black),),
+        centerTitle: true,
       ),
       body: StreamBuilder(
         stream: FirebaseFirestore.instance

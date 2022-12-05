@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -10,7 +12,8 @@ class Support extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        title: Text("Support"),
+        title: Text("Support",style: TextStyle(color: Colors.black),),
+        centerTitle: true,
       ),
       body: Padding(
         padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 20.h),
@@ -25,8 +28,8 @@ class Support extends StatelessWidget {
             ),
             Divider(color: Colors.blue,),
             supportField("Phone", "01616738383"),
-            supportField("E-mail", "thed9922@gmail.com"),
-            supportField("Facebook", "http://facebook.com/shelter"),
+            supportField("E-mail", "hamidhosen6403@mail.com"),
+            supportField("Facebook", "http://facebook.com"),
 
           ],
         ),
