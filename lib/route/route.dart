@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, no_leading_underscores_for_local_identifiers
 
 import 'package:get/get.dart';
 import 'package:tour_application/screen/auth/sign_up.dart';
@@ -8,6 +8,8 @@ import 'package:tour_application/screen/splash_screen.dart';
 import 'package:tour_application/screen/user_form.dart';
 
 import '../screen/auth/sign_in.dart';
+import '../screen/bottom_nav_controller/details_screen.dart';
+import '../screen/bottom_nav_controller/sell_all.dart';
 import '../screen/drawer_pages/faq.dart';
 import '../screen/drawer_pages/how_to_use.dart';
 import '../screen/drawer_pages/privacy.dart';
@@ -28,6 +30,8 @@ const String faqScreen = '/faq-screen';
 const String howToUseScreen = '/how-to-use-screen';
 const String settingsScreen = '/settings-screen';
 const String profileScreen = '/profile-screen';
+const String seeAllScreen = '/seeAll-screen';
+const String detailsScreen = '/details-screen';
 
 // control our page  route flow
 
@@ -58,8 +62,22 @@ List<GetPage> getPages = [
     name: howToUseScreen,
     page: () => HowToUse(),
   ),
-    GetPage(
+  GetPage(
     name: profileScreen,
     page: () => UserProfile(),
+  ),
+  GetPage(
+    name: seeAllScreen,
+    page: () {
+      SeeAll _seeAll = Get.arguments;
+      return _seeAll;
+    },
+  ),
+  GetPage(
+    name: detailsScreen,
+    page: () {
+      DetailsSCreen _detailsSCreen = Get.arguments;
+      return _detailsSCreen;
+    },
   ),
 ];

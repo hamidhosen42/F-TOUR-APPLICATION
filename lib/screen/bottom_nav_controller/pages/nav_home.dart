@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_is_empty, prefer_final_fields, unused_field, use_key_in_widget_constructors
+// ignore_for_file: prefer_const_constructors, prefer_is_empty, prefer_final_fields, unused_field, use_key_in_widget_constructors, sized_box_for_whitespace
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -7,6 +7,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+
+import '../../../route/route.dart';
+import '../../../widgets/nav_home_categories.dart';
 
 class NavHome extends StatefulWidget {
   @override
@@ -133,10 +136,10 @@ class _NavHomeState extends State<NavHome> {
                 ),
               ),
             ),
-            // navHomeCategories(
-            //   "For You",
-            //   () => Get.toNamed(seeAllScreen, arguments: SeeAll('for_you')),
-            // ),
+            navHomeCategories(
+              "For You",
+              () => Get.toNamed(seeAllScreen, arguments: SeeAll('for_you')),
+            ),
             SizedBox(
               height: 5.h,
             ),
