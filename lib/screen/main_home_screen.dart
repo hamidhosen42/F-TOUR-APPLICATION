@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
+import 'bottom_nav_controller/nav_controller.dart';
 import 'drawer_screen.dart';
 
 class MainHomeScreen extends StatelessWidget {
@@ -47,7 +48,7 @@ class MainHomeScreen extends StatelessWidget {
           // ignore: prefer_const_literals_to_create_immutables
           children: [
             DrawerScreen(),
-            // BottomNavController(),
+            BottomNavController(),
           ],
         ),
       ),
