@@ -8,6 +8,7 @@ import 'package:tour_application/const/app_colors.dart';
 import 'package:tour_application/screen/auth/sign_in.dart';
 import 'package:tour_application/styles/style.dart';
 
+import '../../back_end/auth.dart';
 import '../../route/route.dart';
 import '../../widgets/violetButton.dart';
 
@@ -54,7 +55,8 @@ class SignUp extends StatelessWidget {
               SizedBox(
                 height: 40.h,
               ),
-              VioletButton("Create Account",()=>Get.toNamed(userForm)),
+              VioletButton("Create Account",()=> Auth().registration(
+                    _emailController.text, _passwordController.text, context)),
               SizedBox(
                 height: 20.h,
               ),

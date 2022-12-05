@@ -8,6 +8,7 @@ import 'package:tour_application/const/app_colors.dart';
 import 'package:tour_application/route/route.dart';
 import 'package:tour_application/styles/style.dart';
 
+import '../../back_end/auth.dart';
 import '../../widgets/violetButton.dart';
 
 class SignIn extends StatelessWidget {
@@ -53,7 +54,10 @@ class SignIn extends StatelessWidget {
               SizedBox(
                 height: 40.h,
               ),
-              VioletButton("Login",(){}),
+              VioletButton("Login", () {
+                Auth().login(
+                      _emailController.text, _passwordController.text, context);
+              }),
               SizedBox(
                 height: 20.h,
               ),
@@ -98,9 +102,10 @@ class SignIn extends StatelessWidget {
                                 fontSize: 20.sp,
                                 color: AppColors.violetColor,
                                 fontWeight: FontWeight.w600),
-                            recognizer: TapGestureRecognizer()..onTap = () {
-                              Get.toNamed(signUp);
-                            })
+                            recognizer: TapGestureRecognizer()
+                              ..onTap = () {
+                                Get.toNamed(signUp);
+                              })
                       ]),
                 ),
               ),
