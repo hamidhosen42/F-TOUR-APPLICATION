@@ -6,7 +6,7 @@ Widget drawerItem(String itemName, onClick) {
     onTap: onClick,
     child: Text(
       itemName,
-      style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.w400),
+      style: TextStyle(fontSize: 22.sp, fontWeight: FontWeight.w500),
     ),
   );
 }
