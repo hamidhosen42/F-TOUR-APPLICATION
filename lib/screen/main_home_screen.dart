@@ -52,6 +52,13 @@ class MainHomeScreen extends StatelessWidget {
             AppString.AppName,
             style: TextStyle(color: Colors.black),
           ),
+          actions: [
+            IconButton(
+                onPressed: () {
+                  Get.toNamed(profileScreen);
+                },
+                icon: Icon(CupertinoIcons.person_alt_circle))
+          ],
           backgroundColor: Colors.white,
           elevation: 0,
           centerTitle: true,

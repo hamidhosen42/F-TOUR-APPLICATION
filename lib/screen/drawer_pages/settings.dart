@@ -12,7 +12,6 @@ import '../../theme/app_theme.dart';
 import '../../widgets/drawer_item.dart';
 
 class Settings extends StatelessWidget {
-  
   RxBool darkMode = false.obs;
   final box = GetStorage();
 
@@ -82,7 +81,10 @@ class Settings extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        title: const Text("Settings",style: TextStyle(color: Colors.black),),
+        title: const Text(
+          "Settings",
+          style: TextStyle(color: Colors.black),
+        ),
         centerTitle: true,
       ),
       body: Padding(
