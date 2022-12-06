@@ -1,5 +1,6 @@
-// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, prefer_const_literals_to_create_immutables, await_only_futures
+// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, prefer_const_literals_to_create_immutables, await_only_futures, unused_field
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -13,7 +14,17 @@ import '../widgets/drawer_item.dart';
 import 'bottom_nav_controller/nav_controller.dart';
 import 'drawer_screen.dart';
 
-class MainHomeScreen extends StatelessWidget {
+class MainHomeScreen extends StatefulWidget {
+
+
+  // late User _user;
+  // MainHomeScreen(this._user);
+
+  @override
+  State<MainHomeScreen> createState() => _MainHomeScreenState();
+}
+
+class _MainHomeScreenState extends State<MainHomeScreen> {
   Future _exitDialog(context) {
     return showDialog(
         context: context,
@@ -80,7 +91,7 @@ class MainHomeScreen extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: Colors.grey,
                   ),
-                  accountName: Text("Md.Hamid Hosen",
+                  accountName: Text("Hamid Hosen",
                       style: TextStyle(
                         fontSize: 20,
                         // fontFamily: "Cursive",

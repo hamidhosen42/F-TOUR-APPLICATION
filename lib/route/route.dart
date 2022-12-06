@@ -1,6 +1,8 @@
-// ignore_for_file: prefer_const_constructors, no_leading_underscores_for_local_identifiers
+// ignore_for_file: prefer_const_constructors, no_leading_underscores_for_local_identifiers, unused_element
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
+import 'package:tour_application/screen/auth/phone_auth.dart';
 import 'package:tour_application/screen/auth/sign_up.dart';
 import 'package:tour_application/screen/onboarding_screen.dart';
 import 'package:tour_application/screen/privacy_policy.dart';
@@ -38,8 +40,9 @@ const String seeAllScreen = '/seeAll-screen';
 const String detailsScreen = '/details-screen';
 const String navAddLastStep = '/navAddLastStep-screen';
 
-// control our page  route flow
 
+// control our page  route flow
+late User _user;
 List<GetPage> getPages = [
   GetPage(name: splash, page: () => SplashScreen()),
   GetPage(name: onboarding, page: () => OnboardingScreen()),

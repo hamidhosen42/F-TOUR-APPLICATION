@@ -10,6 +10,7 @@ import 'package:tour_application/styles/style.dart';
 
 import '../../back_end/auth.dart';
 import '../../widgets/violetButton.dart';
+import 'phone_auth.dart';
 
 class SignIn extends StatelessWidget {
   TextEditingController _emailController = TextEditingController();
@@ -82,6 +83,12 @@ class SignIn extends StatelessWidget {
                   IconButton(
                       onPressed: () {},
                       icon: Image.asset("assets/icons/facebook.png")),
+                      IconButton(
+                      onPressed: () {
+                        Navigator.push(context,
+                          MaterialPageRoute(builder: (_) => PhoneAuth()));
+                      },
+                      icon: Icon(Icons.mobile_screen_share_rounded,size: 40.sp,)),
                 ],
               ),
               SizedBox(

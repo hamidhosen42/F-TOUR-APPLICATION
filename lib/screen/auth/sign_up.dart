@@ -1,5 +1,6 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, sort_child_properties_last, prefer_const_literals_to_create_immutables, unused_field, prefer_final_fields, must_be_immutable
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -11,6 +12,7 @@ import 'package:tour_application/styles/style.dart';
 import '../../back_end/auth.dart';
 import '../../route/route.dart';
 import '../../widgets/violetButton.dart';
+import 'phone_auth.dart';
 
 class SignUp extends StatelessWidget {
   TextEditingController _emailController = TextEditingController();
@@ -81,6 +83,12 @@ class SignUp extends StatelessWidget {
                   IconButton(
                       onPressed: () {},
                       icon: Image.asset("assets/icons/facebook.png")),
+                  IconButton(
+                      onPressed: () {
+                        Navigator.push(context,
+                          MaterialPageRoute(builder: (_) => PhoneAuth()));
+                      },
+                      icon: Icon(Icons.mobile_screen_share_rounded,size: 40.sp,)),
                 ],
               ),
               SizedBox(
