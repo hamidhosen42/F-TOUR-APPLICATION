@@ -20,7 +20,10 @@ class DrawerScreen extends StatelessWidget {
           children: [
             Text(
               AppString.AppName,
-              style: TextStyle(fontSize: 32.sp, fontWeight: FontWeight.w500),
+              style: TextStyle(fontSize: 32.sp,color: Colors.black, fontWeight: FontWeight.w500),
+            ),
+            SizedBox(
+              height: 20.h,
             ),
             Text(
               "Travel Agency",

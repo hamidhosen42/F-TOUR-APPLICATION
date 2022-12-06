@@ -82,7 +82,8 @@ class Settings extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        title: const Text("Settings"),
+        title: const Text("Settings",style: TextStyle(color: Colors.black),),
+        centerTitle: true,
       ),
       body: Padding(
         padding: EdgeInsets.only(left: 25.w, right: 25.w, top: 20.h),

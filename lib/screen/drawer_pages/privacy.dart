@@ -1,4 +1,4 @@
-// ignore_for_file: must_be_immutable, use_key_in_widget_constructors, unused_field, prefer_final_fields
+// ignore_for_file: must_be_immutable, use_key_in_widget_constructors, unused_field, prefer_final_fields, prefer_const_constructors
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -27,6 +27,9 @@ class Privacy extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
+        iconTheme: IconThemeData(
+    color: Colors.black, //change your color here
+  ),
         elevation: 0,
         title: const Text("Privacy",style: TextStyle(color: Colors.black),),
         centerTitle: true,

@@ -12,9 +12,6 @@ class UsersInfo{
 
   sendFormDataToDB(
       String name, int phone, String address, String dob, String gender) async {
-
-        print(".................");
-        print(name);
     try {
       CollectionReference _course =
           FirebaseFirestore.instance.collection("users-form-data");

@@ -107,7 +107,7 @@ class _NavHomeState extends State<NavHome> {
               padding: EdgeInsets.only(
                   left: 20.w, right: 20.w, top: 10.h, bottom: 10.h),
               child: InkWell(
-                // onTap: () => Get.toNamed(searchScreen),
+                onTap: () => Get.toNamed(searchScreen),
                 child: Container(
                   height: 45.h,
                   decoration: BoxDecoration(

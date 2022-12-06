@@ -10,11 +10,13 @@ import 'package:tour_application/screen/user_form.dart';
 import '../screen/auth/sign_in.dart';
 import '../screen/bottom_nav_controller/details_screen.dart';
 import '../screen/bottom_nav_controller/pages/nav_add_last_step.dart';
+import '../screen/bottom_nav_controller/search_screen.dart';
 import '../screen/bottom_nav_controller/sell_all.dart';
 import '../screen/drawer_pages/faq.dart';
 import '../screen/drawer_pages/how_to_use.dart';
 import '../screen/drawer_pages/privacy.dart';
 import '../screen/drawer_pages/profile.dart';
+import '../screen/drawer_pages/settings.dart';
 import '../screen/drawer_pages/support.dart';
 import '../screen/main_home_screen.dart';
 
@@ -31,6 +33,7 @@ const String faqScreen = '/faq-screen';
 const String howToUseScreen = '/how-to-use-screen';
 const String settingsScreen = '/settings-screen';
 const String profileScreen = '/profile-screen';
+const String searchScreen = '/search-screen';
 const String seeAllScreen = '/seeAll-screen';
 const String detailsScreen = '/details-screen';
 const String navAddLastStep = '/navAddLastStep-screen';
@@ -64,9 +67,17 @@ List<GetPage> getPages = [
     name: howToUseScreen,
     page: () => HowToUse(),
   ),
+    GetPage(
+    name: searchScreen,
+    page: () => SearchScreen(),
+  ),
   GetPage(
     name: profileScreen,
     page: () => UserProfile(),
+  ),
+    GetPage(
+    name: settingsScreen,
+    page: () => Settings(),
   ),
   GetPage(
     name: seeAllScreen,
